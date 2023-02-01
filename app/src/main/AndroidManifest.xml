@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android114Homework">
         <activity
+            android:name=".FinishActivity"
+            android:exported="false" />
+        <activity
             android:name=".StudyActivity"
             android:exported="false" />
         <activity

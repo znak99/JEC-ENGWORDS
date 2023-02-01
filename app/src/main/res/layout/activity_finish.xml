@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/customSecondaryWhite"
+    android:paddingHorizontal="16dp"
+    android:orientation="vertical"
+    tools:context=".FinishActivity">
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/ic_baseline_celebration_24"
+        app:tint="@color/customPrimaryColor" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="今日の勉強はここまで！"
+        android:textSize="18sp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/customSecondaryBlack" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="語学の基本は単語から！"
+        android:textSize="18sp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/customSecondaryBlack" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="単語帳の単語を"
+        android:textSize="18sp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/customSecondaryBlack" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="増やしていこう！"
+        android:textSize="18sp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/customSecondaryBlack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/main_study"
+        android:elevation="10dp"
+        android:text="単語帳を見る"
+        android:textSize="14sp"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/customWhite"
+        android:gravity="center"
+        android:padding="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:gravity="end"
+        android:text="@string/back_home"
+        android:textSize="16sp"
+        android:fontFamily="@font/regular"
+        android:textColor="@color/customRed" />
+
+
+</LinearLayout>
