@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/delete_button.xml" value="0.1315" />
+        <entry key="app/src/main/res/drawable/ic_baseline_edit_note_24.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable/main_study.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable/main_today_word_bg.xml" value="0.1315" />
         <entry key="app/src/main/res/font/font.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/layout/activity_add.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_finish.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.34814814814814815" />
