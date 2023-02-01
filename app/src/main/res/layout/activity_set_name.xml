@@ -19,7 +19,7 @@
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_baseline_home_24"
+            android:src="@drawable/ic_baseline_person_24"
             app:tint="@color/customPrimaryColor" />
 
         <TextView

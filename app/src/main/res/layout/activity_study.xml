@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/customSecondaryWhite"
+    android:paddingHorizontal="16dp"
+    android:orientation="vertical"
+    tools:context=".StudyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_baseline_quiz_24"
+            app:tint="@color/customPrimaryColor" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:gravity="end"
+            android:text="@string/back"
+            android:textSize="14sp"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/customRed" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="英語"
+        android:textSize="14sp"
+        android:fontFamily="@font/regular"
+        android:textColor="@color/customSecondaryColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/main_today_word_bg"
+        android:elevation="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="APPLE"
+            android:textSize="24sp"
+            android:fontFamily="@font/black"
+            android:gravity="center"
+            android:textColor="@color/customSecondaryColor" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="日本語"
+        android:textSize="14sp"
+        android:fontFamily="@font/regular"
+        android:textColor="@color/customSecondaryColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/main_today_word_bg"
+        android:elevation="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="りんご"
+            android:textSize="24sp"
+            android:fontFamily="@font/black"
+            android:gravity="center"
+            android:textColor="@color/customSecondaryColor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/main_study"
+            android:elevation="10dp"
+            android:text="わからない"
+            android:textSize="14sp"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/customWhite"
+            android:gravity="center"
+            android:padding="8dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/main_study"
+            android:elevation="10dp"
+            android:text="わかる"
+            android:textSize="14sp"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/customWhite"
+            android:gravity="center"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
