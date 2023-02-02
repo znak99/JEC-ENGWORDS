@@ -42,6 +42,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/set_name"
@@ -50,6 +51,7 @@
                     android:textColor="@color/customSecondaryBlack" />
 
                 <ImageView
+                    android:id="@+id/setUserName"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
