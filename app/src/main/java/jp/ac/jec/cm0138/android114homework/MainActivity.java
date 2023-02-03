@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView userName;
-    private ImageView setUserName;
+    private TextView userName, editWordsTxt;
+    private ImageView setUserName, editWordsImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +22,16 @@ public class MainActivity extends AppCompatActivity {
         userName = findViewById(R.id.userName);
         setUserName = findViewById(R.id.setUserName);
 
+        editWordsTxt = findViewById(R.id.editWordsTxt);
+        editWordsImg = findViewById(R.id.editWordsImg);
+
         userName.setOnClickListener(this::moveToSetName);
         setUserName.setOnClickListener(this::moveToSetName);
 
+        editWordsTxt.setOnClickListener(this::moveToEdit);
+        editWordsImg.setOnClickListener(this::moveToEdit);
+
+        // 프리퍼런스에 이름 저장
         SharedPreferences pref = getSharedPreferences("ANDROID114", MODE_PRIVATE);
         if (pref.getString("name", "").equals("")) {
             userName.setText(R.string.set_name);
@@ -41,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("name", userName.getText().toString().substring(0, userName.getText().toString().length() - 2));
         }
         startActivityForResult(intent, SetNameActivity.REQUEST_CODE);
+    }
+
+    // EditActivity로 이동
+    public void moveToEdit(View view) {
+        Intent intent = new Intent(this, EditActivity.class);
+        startActivity(intent);
     }
 
     @Override
