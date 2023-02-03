@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView userName, editWordsTxt, todayWord, todayWordWarning;
     private ImageView setUserName, editWordsImg;
     private LinearLayout wordList;
+    private CheckBox showRandom;
+    private Button start;
 
     private ArrayList<String> engWords = new ArrayList<>();
 
@@ -47,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
         wordList.setOnClickListener(view -> showNextWord());
 
+        showRandom = findViewById(R.id.showRandom);
+        start = findViewById(R.id.start);
+
+        start.setOnClickListener(this::moveToStudy);
+
         editWordsTxt.setOnClickListener(this::moveToEdit);
         editWordsImg.setOnClickListener(this::moveToEdit);
 
@@ -63,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
-
-        Log.i("main", engWords.toString());
+        c.close();
 
         if (engWords.size() == 0) {
             todayWord.setText(R.string.today_word_noContent);
@@ -107,6 +115,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // StudyActivity로 이동
+    public void moveToStudy(View view) {
+        Intent intent = new Intent(this, StudyActivity.class);
+        intent.putExtra("showRandom", showRandom.isChecked());
+        startActivity(intent);
+    }
+
     // EditActivity로 이동
     public void moveToEdit(View view) {
         Intent intent = new Intent(this, AddActivity.class);
@@ -134,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
             dbHelper.onCreate(db);
 
             engWords.clear();
+
             String sql = "SELECT eng_word FROM words";
             Cursor c = db.rawQuery(sql, null);
             while (c.moveToNext()) {
@@ -141,8 +157,8 @@ public class MainActivity extends AppCompatActivity {
                 if (engWords.size() == 5) {
                     break;
                 }
-
             }
+            c.close();
 
             Log.i("main", engWords.toString());
 
