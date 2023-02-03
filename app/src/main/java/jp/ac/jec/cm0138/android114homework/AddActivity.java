@@ -2,6 +2,7 @@ package jp.ac.jec.cm0138.android114homework;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
@@ -27,7 +28,7 @@ public class AddActivity extends AppCompatActivity {
         add = findViewById(R.id.add);
         delete = findViewById(R.id.delete);
 
-        back.setOnClickListener(view -> finish());
+        back.setOnClickListener(view -> goToHome());
 
         DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -42,13 +43,18 @@ public class AddActivity extends AppCompatActivity {
             String sql = "INSERT INTO words VALUES ('" +
                     english.getText().toString() + "', '" + japanese.getText().toString() + "')";
             db.execSQL(sql);
-            finish();
+            goToHome();
         });
 
         delete.setOnClickListener(view -> {
             String sql = "DELETE FROM words";
             db.execSQL(sql);
-            finish();
+            goToHome();
         });
+    }
+
+    public void goToHome() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Button start;
 
     private ArrayList<String> engWords = new ArrayList<>();
+    private ArrayList<String> engWordsTemp = new ArrayList<>();
 
     @SuppressLint("Range")
     @Override
@@ -67,11 +69,20 @@ public class MainActivity extends AppCompatActivity {
         String sql = "SELECT eng_word FROM words";
         Cursor c = db.rawQuery(sql, null);
         while (c.moveToNext()) {
-            engWords.add(c.getString(c.getColumnIndex("eng_word")));
-            if (engWords.size() == 5) {
-                break;
+            engWordsTemp.add(c.getString(c.getColumnIndex("eng_word")));
+        }
+
+        if (engWordsTemp.size() > 0) {
+            Collections.shuffle(engWordsTemp);
+            Log.i("engWordsTemp", engWordsTemp.toString());
+            for (int i = 0; i < engWordsTemp.size(); i++) {
+                engWords.add(engWordsTemp.get(i));
+                if (i == 4) {
+                    break;
+                }
             }
         }
+
         c.close();
 
         if (engWords.size() == 0) {
@@ -153,9 +164,17 @@ public class MainActivity extends AppCompatActivity {
             String sql = "SELECT eng_word FROM words";
             Cursor c = db.rawQuery(sql, null);
             while (c.moveToNext()) {
-                engWords.add(c.getString(c.getColumnIndex("eng_word")));
-                if (engWords.size() == 5) {
-                    break;
+                engWordsTemp.add(c.getString(c.getColumnIndex("eng_word")));
+            }
+
+            if (engWordsTemp.size() > 0) {
+                Collections.shuffle(engWordsTemp);
+                Log.i("engWordsTemp", engWordsTemp.toString());
+                for (int i = 0; i < engWordsTemp.size(); i++) {
+                    engWords.add(engWordsTemp.get(i));
+                    if (i == 4) {
+                        break;
+                    }
                 }
             }
             c.close();
