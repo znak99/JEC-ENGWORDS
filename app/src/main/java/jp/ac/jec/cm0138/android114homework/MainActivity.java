@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     // EditActivity로 이동
     public void moveToEdit(View view) {
-        Intent intent = new Intent(this, EditActivity.class);
+        Intent intent = new Intent(this, AddActivity.class);
         startActivity(intent);
     }
 

@@ -6,7 +6,7 @@
     <string name="today_word_noContent">まだ登録した単語がないですね🥲\n単語を登録してください！</string>
     <string name="to_next_word">＊ボックスをTAPして次の単語へ</string>
     <string name="start">勉強スタート！</string>
-    <string name="edit_words"><u>単語帳を編集する</u></string>
+    <string name="edit_words"><u>単語を追加する</u></string>
     <string name="back"><u>戻る</u></string>
     <string name="back_home"><u>ホームヘ</u></string>
 </resources>
