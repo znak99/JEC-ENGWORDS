@@ -17,6 +17,7 @@
         app:tint="@color/customPrimaryColor" />
 
     <TextView
+        android:id="@+id/txt1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -26,6 +27,7 @@
         android:textColor="@color/customSecondaryBlack" />
 
     <TextView
+        android:id="@+id/txt2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="語学の基本は単語から！"
@@ -34,6 +36,7 @@
         android:textColor="@color/customSecondaryBlack" />
 
     <TextView
+        android:id="@+id/txt3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="単語帳の単語を"
@@ -42,6 +45,7 @@
         android:textColor="@color/customSecondaryBlack" />
 
     <TextView
+        android:id="@+id/txt4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="増やしていこう！"
@@ -50,6 +54,7 @@
         android:textColor="@color/customSecondaryBlack" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addWord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -63,6 +68,7 @@
         android:padding="8dp" />
 
     <TextView
+        android:id="@+id/moveToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
