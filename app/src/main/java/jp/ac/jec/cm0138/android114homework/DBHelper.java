@@ -11,7 +11,6 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
 
     public static final String TABLE_NAME = "WORDS";
-    public static final String COL_ID = "_id";
     public static final String COL_ENG = "eng_word";
     public static final String COL_JPN = "jpn_word";
 
@@ -22,16 +21,13 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" +
-                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_ENG + " TEXT NOT NULL, " +
                 COL_JPN + " TEXT NOT NULL)"
         );
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-//        onCreate(db);
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
     }
 }
 
