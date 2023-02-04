@@ -3,6 +3,7 @@ package jp.ac.jec.cm0138.android114homework;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
@@ -37,6 +38,14 @@ public class AddActivity extends AppCompatActivity {
         add.setOnClickListener(view -> {
             if (english.getText().toString().equals("") || japanese.getText().toString().equals("")) {
                 Toast.makeText(this, "英単語または日本語を入力してください", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Cursor c = db.rawQuery(
+                    "SELECT * FROM words WHERE eng_word = '" +
+                            english.getText().toString() + "'", null);
+            if (c.getCount() > 0) {
+                Toast.makeText(this, "既に登録されている英単語です", Toast.LENGTH_SHORT).show();
                 return;
             }
 

@@ -104,14 +104,14 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fail"
+            android:id="@+id/prev"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp"
             android:background="@drawable/main_study"
             android:elevation="10dp"
-            android:text="わからない"
+            android:text="前の単語"
             android:textSize="14sp"
             android:fontFamily="@font/bold"
             android:textColor="@color/customWhite"
@@ -134,6 +134,21 @@
             android:padding="8dp" />
 
     </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/main_study"
+        android:elevation="10dp"
+        android:text="わからない"
+        android:textSize="14sp"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/customWhite"
+        android:gravity="center"
+        android:padding="8dp" />
 
 
 </LinearLayout>

@@ -15,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -128,6 +129,10 @@ public class MainActivity extends AppCompatActivity {
 
     // StudyActivity로 이동
     public void moveToStudy(View view) {
+        if (engWords.size() == 0) {
+            Toast.makeText(this, "英単語を登録してください", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Intent intent = new Intent(this, StudyActivity.class);
         intent.putExtra("showRandom", showRandom.isChecked());
         startActivity(intent);

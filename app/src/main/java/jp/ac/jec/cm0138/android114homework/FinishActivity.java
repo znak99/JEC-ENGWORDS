@@ -30,6 +30,8 @@ public class FinishActivity extends AppCompatActivity {
         txt2.setVisibility(View.GONE);
         txt3.setVisibility(View.GONE);
         txt4.setVisibility(View.GONE);
+        moveToHome.setVisibility(View.GONE);
+        addWord.setVisibility(View.GONE);
 
         moveToHome.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
@@ -49,9 +51,13 @@ public class FinishActivity extends AppCompatActivity {
                     txt3.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(() -> {
                         txt4.setVisibility(View.VISIBLE);
-                    }, 500);
-                }, 500);
-            }, 500);
+                        new Handler().postDelayed(() -> {
+                            addWord.setVisibility(View.VISIBLE);
+                            moveToHome.setVisibility(View.VISIBLE);
+                        }, 300);
+                    }, 300);
+                }, 300);
+            }, 300);
         }, 500);
     }
 }
