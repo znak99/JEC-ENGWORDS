@@ -150,5 +150,12 @@
         android:gravity="center"
         android:padding="8dp" />
 
-
+    <TextView
+        android:id="@+id/counter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="1 / 2"
+        android:fontFamily="@font/bold"/>
 </LinearLayout>

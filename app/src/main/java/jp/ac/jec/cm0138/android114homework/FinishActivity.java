@@ -54,10 +54,10 @@ public class FinishActivity extends AppCompatActivity {
                         new Handler().postDelayed(() -> {
                             addWord.setVisibility(View.VISIBLE);
                             moveToHome.setVisibility(View.VISIBLE);
-                        }, 300);
-                    }, 300);
-                }, 300);
-            }, 300);
+                        }, 500);
+                    }, 500);
+                }, 500);
+            }, 500);
         }, 500);
     }
 }

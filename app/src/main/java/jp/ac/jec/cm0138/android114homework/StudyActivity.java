@@ -23,7 +23,7 @@ public class StudyActivity extends AppCompatActivity {
     private ArrayList<String> engWords = new ArrayList<>();
     private ArrayList<String> jpnWords = new ArrayList<>();
 
-    private TextView back, english, japanese;
+    private TextView back, english, japanese, counter;
     private Button prev, fail, pass;
 
     @SuppressLint("Range")
@@ -38,6 +38,7 @@ public class StudyActivity extends AppCompatActivity {
         fail = findViewById(R.id.fail);
         pass = findViewById(R.id.pass);
         prev = findViewById(R.id.prev);
+        counter = findViewById(R.id.counter);
 
         DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -72,6 +73,7 @@ public class StudyActivity extends AppCompatActivity {
             if (current > 0) {
                 current--;
                 english.setText(engWords.get(current));
+                counter.setText((current + 1) + " / " + engWords.size());
             } else {
                 // Dialogを表示する
                 Toast.makeText(this, "最初のカードです。", Toast.LENGTH_SHORT).show();
@@ -92,6 +94,7 @@ public class StudyActivity extends AppCompatActivity {
                 return;
             }
             current++;
+            counter.setText((current + 1) + " / " + engWords.size());
             english.setText(engWords.get(current));
             japanese.setText("");
         });
@@ -105,6 +108,7 @@ public class StudyActivity extends AppCompatActivity {
                 }
                 current++;
                 english.setText(engWords.get(current));
+                counter.setText((current + 1) + " / " + engWords.size());
                 japanese.setText("");
                 isNextButton = false;
                 fail.setText("分からない");
@@ -122,5 +126,7 @@ public class StudyActivity extends AppCompatActivity {
                 isNextButton = true;
             }
         });
+
+        counter.setText((current + 1) + " / " + engWords.size());
     }
 }
