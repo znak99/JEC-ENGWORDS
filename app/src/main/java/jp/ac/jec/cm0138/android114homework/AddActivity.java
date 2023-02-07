@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class AddActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE = 1;
-    private TextView back;
+    private TextView back, updateDelete;
     private EditText english, japanese;
     private Button add, delete;
 
@@ -28,8 +28,12 @@ public class AddActivity extends AppCompatActivity {
         japanese = findViewById(R.id.japanese);
         add = findViewById(R.id.add);
         delete = findViewById(R.id.delete);
+        updateDelete = findViewById(R.id.updateDelete);
 
         back.setOnClickListener(view -> goToHome());
+
+        updateDelete.setOnClickListener(view -> goToUpdateWord());
+
 
         DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -64,6 +68,11 @@ public class AddActivity extends AppCompatActivity {
 
     public void goToHome() {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToUpdateWord() {
+        Intent intent = new Intent(this, UpdateWordActivity.class);
         startActivity(intent);
     }
 }

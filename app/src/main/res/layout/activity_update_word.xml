@@ -7,7 +7,7 @@
     android:background="@color/customSecondaryWhite"
     android:paddingHorizontal="16dp"
     android:orientation="vertical"
-    tools:context=".AddActivity">
+    tools:context=".UpdateWordActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_baseline_add_box_24"
+            android:src="@drawable/ic_baseline_design_services_24"
             app:tint="@color/customPrimaryColor" />
 
         <TextView
@@ -36,74 +36,66 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginHorizontal="16dp"
-        android:text="単語を追加"
-        android:textSize="16sp"
-        android:fontFamily="@font/black"
-        android:textColor="@color/customSecondaryColor" />
+        android:text="単語カードを編集する"
+        android:textSize="24sp"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/customBlack"/>
 
-    <EditText
-        android:id="@+id/english"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:hint="英語"
-        android:inputType="textPersonName"
-        android:textSize="18sp"
-        android:fontFamily="@font/medium"
-        android:textColor="@color/customSecondaryBlack" />
+        android:gravity="end|center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="モード変更"
+            android:textSize="12sp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/customBlack"/>
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:textOff="削除"
+            android:textOn="編集"
+            android:textSize="12dp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/customWhite"
+            android:background="@drawable/red_round"/>
+
+    </LinearLayout>
 
     <EditText
-        android:id="@+id/japanese"
+        android:id="@+id/eng"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="16dp"
-        android:hint="日本語"
+        android:hint="英単語を入力"
         android:inputType="textPersonName"
         android:textSize="18sp"
         android:fontFamily="@font/medium"
         android:textColor="@color/customSecondaryBlack" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/add"
+        android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:background="@drawable/main_study"
         android:elevation="10dp"
-        android:text="追加"
+        android:text="検索"
         android:textSize="14sp"
         android:fontFamily="@font/bold"
         android:textColor="@color/customWhite"
         android:gravity="center"
         android:padding="8dp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:background="@drawable/delete_button"
-        android:elevation="10dp"
-        android:text="単語帳のデータ全部削除"
-        android:textSize="14sp"
-        android:fontFamily="@font/bold"
-        android:textColor="@color/customWhite"
-        android:gravity="center"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/updateDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/edit_delete_words"
-        android:fontFamily="@font/medium"
-        android:textColor="@color/customPrimaryColor"/>
 
 </LinearLayout>
