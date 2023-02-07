@@ -38,7 +38,7 @@ public class UpdateWordActivity extends AppCompatActivity {
         toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
             isDeleteMode = isChecked;
             title.setText(isDeleteMode ? "単語カードを削除する" : "単語カードを編集する");
-            submit.setText(isDeleteMode ? "削除" : "検索");
+            submit.setText(isDeleteMode ? "カード削除" : "カード検索");
             toggleButton.setText(isDeleteMode ? "削除" : "編集");
             submit.setBackgroundResource(isDeleteMode ? R.drawable.red_round : R.drawable.blue_round);
             toggleButton.setBackgroundResource(isDeleteMode ? R.drawable.blue_round : R.drawable.red_round);
@@ -54,30 +54,38 @@ public class UpdateWordActivity extends AppCompatActivity {
             Cursor c = db.rawQuery(sql, null);
 
             if (c.getCount() == 0) {
-                showAlert("エラー", "一致する単語カードがありません。", null);
+                showAlert("エラー", "一致する単語カードがありません。", "確認", null);
             } else {
                 if (isDeleteMode) {
                     sql = "DELETE FROM words WHERE eng_word = '" + eng.getText().toString() + "'";
                     db.execSQL(sql);
                     showAlert("削除",
                             "単語カード「" + eng.getText().toString() + "」を削除しました。",
+                            "確認",
                             (dialogInterface, i) -> {
                                 Intent intent = new Intent(UpdateWordActivity.this, MainActivity.class);
                                 startActivity(intent);
                             });
                 } else {
-                    // moveToEdit
+                    showAlert("検索",
+                            "一致する単語カードがあります。",
+                            "編集",
+                            (dialogInterface, i) -> {
+                                Intent intent = new Intent(UpdateWordActivity.this, EditActivity.class);
+                                intent.putExtra("eng", eng.getText().toString());
+                                startActivity(intent);
+                            });
                 }
             }
         });
     }
 
-    private void showAlert(String title, String message, DialogInterface.OnClickListener listener) {
+    private void showAlert(String title, String message, String button,DialogInterface.OnClickListener listener) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setTitle(title).setMessage(message);
 
-        builder.setNeutralButton("確認", listener);
+        builder.setPositiveButton(button, listener);
 
         AlertDialog alertDialog = builder.create();
 
