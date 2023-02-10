@@ -2,6 +2,8 @@ package jp.ac.jec.cm0138.android114homework;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -60,9 +62,11 @@ public class AddActivity extends AppCompatActivity {
         });
 
         delete.setOnClickListener(view -> {
-            String sql = "DELETE FROM words";
-            db.execSQL(sql);
-            goToHome();
+            showAlert("全部削除", "本当に単語カードを全部削除しますか？", "はい", (dialogInterface, i) -> {
+                String sql = "DELETE FROM words";
+                db.execSQL(sql);
+                goToHome();
+            });
         });
     }
 
@@ -74,5 +78,18 @@ public class AddActivity extends AppCompatActivity {
     public void goToUpdateWord() {
         Intent intent = new Intent(this, UpdateWordActivity.class);
         startActivity(intent);
+    }
+
+    private void showAlert(String title, String message, String button, DialogInterface.OnClickListener listener) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle(title).setMessage(message);
+
+        builder.setNegativeButton("いいえ", null);
+        builder.setPositiveButton(button, listener);
+
+        AlertDialog alertDialog = builder.create();
+
+        alertDialog.show();
     }
 }

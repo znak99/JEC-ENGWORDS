@@ -36,4 +36,51 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="単語カードを変更"
+        android:textSize="16sp"
+        android:fontFamily="@font/black"
+        android:textColor="@color/customSecondaryColor" />
+
+    <EditText
+        android:id="@+id/english"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:hint="英語"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/customSecondaryBlack" />
+
+    <EditText
+        android:id="@+id/japanese"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="日本語"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/customSecondaryBlack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/main_study"
+        android:elevation="10dp"
+        android:text="編集"
+        android:textSize="14sp"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/customWhite"
+        android:gravity="center"
+        android:padding="8dp" />
+
 </LinearLayout>
